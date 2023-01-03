@@ -30,6 +30,9 @@ gh repo clone jamesstorm/prime /home/james/prime
 
 chmod +x /home/james/prime/debian/setup.sh
 
+#OpenSSH Server
+sudo apt install openssh-server -y
+
 echo "Now login as james and run /home/james/prime/debian/setup.sh"
 
 
