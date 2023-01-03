@@ -7,8 +7,10 @@ apt-get update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 apt-get upgrade -y
 
-# Install some things
-apt-get install sudo curl wget openssh-server -y
+#create a user then collect a passwd
+adduser --disabled-password --gecos "" james
+echo "james ALL=PASSWD: ALL" > /etc/sudoers.d/james
+passwd
 
 #Github CLI
 echo "Github CLI"
@@ -19,10 +21,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
-
-#create a user
-adduser james
-echo "james ALL=PASSWD: ALL" > /etc/sudoers.d/james
+gh auth login
 
 su james
 
