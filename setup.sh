@@ -28,7 +28,7 @@ gh auth login
 
 gh repo clone jamesstorm/prime /home/james/prime
 
-chmod +x /home/james/prime/setup.sh
+chmod +x /home/james/prime/debian/setup.sh
 
 echo "Now login as james and run /home/james/prime/debian/setup.sh"
 
