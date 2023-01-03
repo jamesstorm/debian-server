@@ -29,7 +29,7 @@ gh auth login
 
 cd /home/james/
 
-gh repo clone jamesstorm/prime
+gh repo clone jamesstorm/prime /home/james/
 
 cd home/james/prime/debian
 
