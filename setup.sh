@@ -29,9 +29,9 @@ gh auth login
 
 cd /home/james/
 
-gh repo clone jamesstorm/prime /home/james/
+gh repo clone jamesstorm/prime .
 
-cd home/james/prime/debian
+cd /home/james/prime/debian
 
 chmod +x setup.sh
 
