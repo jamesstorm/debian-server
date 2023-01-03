@@ -3,19 +3,17 @@
 echo "Hello, Debain Server"
 
 # need to run this first manually
-# apt-get update && apt-get install git curl -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server
-
-
+# apt-get update && apt-get install git curl -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd debian-server && chmod +x setup.sh && ./setup.sh
 
 # apt update upgrade
 apt-get update 
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+apt install apt-transport-https ca-certificates curl software-properties-common -y
 apt-get upgrade -y
 
 #create a user then collect a passwd
-adduser --disabled-password --gecos "" james
-echo "james ALL=PASSWD: ALL" > /etc/sudoers.d/james
-passwd
+#adduser --disabled-password --gecos "" james
+#echo "james ALL=PASSWD: ALL" > /etc/sudoers.d/james
+#passwd
 
 #Github CLI
 echo "Github CLI"
@@ -28,5 +26,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 gh auth login
 
-su james
+gh repo clone jamesstorm/prime
+
+cd prime/debian
+./setup.sh
+
+
+
+
 
