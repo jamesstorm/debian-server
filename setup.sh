@@ -7,7 +7,7 @@ echo "Hello, Debain Server"
 
 # apt update upgrade
 apt-get update 
-apt install apt-transport-https ca-certificates curl software-properties-common sudo curl -y
+apt install apt-transport-https ca-certificates software-properties-common sudo curl wget -y
 apt-get upgrade -y
 
 #Github CLI
