@@ -2,6 +2,12 @@
 
 echo "Hello, Debain Server"
 
+# need to run this first manually
+# apt-get update && apt-get install git curl -y && apt-get upgrade -y
+# git clone https://github.com/jamesstorm/debian-server
+
+
+
 # apt update upgrade
 apt-get update 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
