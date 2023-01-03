@@ -28,9 +28,11 @@ gh auth login
 
 gh repo clone jamesstorm/prime
 
-cd prime/debian
+cd ../prime/debian
+
 chmod +x setup.sh
 ./setup.sh
+
 
 
 
