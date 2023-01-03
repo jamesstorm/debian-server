@@ -26,14 +26,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 
 gh auth login
 
+gh repo clone jamesstorm/prime /home/james/prime
 
-cd /home/james/
-
-gh repo clone jamesstorm/prime .
-
-cd /home/james/prime/debian
-
-chmod +x setup.sh
+chmod +x /home/james/prime/setup.sh
 
 echo "Now login as james and run /home/james/prime/debian/setup.sh"
 
