@@ -22,6 +22,9 @@ apt-get install sudo
 useradd -m -p $(openssl passwd -crypt $PASSWD) $USERNAME
 usermod -aG sudo $USERNAME
 
+cd /home/james
+su james
+
 
 
 
