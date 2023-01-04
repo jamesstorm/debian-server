@@ -41,7 +41,7 @@ gh repo clone jamesstorm/prime /home/$USERNAME/prime
 
 chmod +x /home/$USERNAME/prime/debian/setup.sh
 
-chown -r /home/$USERNAME/prime $USERNAME
+chown -R $USERNAME /home/$USERNAME/prime 
 
 echo "Now login as $USERNAME and run /home/$USERNAME/prime/debian/setup.sh"
 
