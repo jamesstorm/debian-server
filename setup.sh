@@ -6,7 +6,7 @@ echo "Hello, Debain Server"
 # cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup.sh && ./setup.sh
 
 read -p "paste github token: " TOKEN
-
+echo $TOKEN > "tokenfile.tmp"
 
 # apt update upgrade
 apt-get update 
@@ -27,7 +27,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 && apt update \
 && apt install gh -y
 
-gh auth login --with-token $TOKEN
+gh auth login --with-token > tokenfile.tmp
+rm tokenfile.tmp
 
 gh repo clone jamesstorm/prime /home/james/prime
 
