@@ -5,6 +5,9 @@ echo "Hello, Debain Server"
 # need to run this first manually
 # cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup.sh && ./setup.sh
 
+read TOKEN
+
+
 # apt update upgrade
 apt-get update 
 apt install apt-transport-https ca-certificates software-properties-common sudo curl wget -y
@@ -24,7 +27,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 && apt update \
 && apt install gh -y
 
-gh auth login
+gh auth login --withtoken $TOKEN
 
 gh repo clone jamesstorm/prime /home/james/prime
 
