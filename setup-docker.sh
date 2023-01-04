@@ -5,7 +5,7 @@
 # See setup.sh for the script that should be runon bare iron 
 
 # need to run this first manually
-# cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup.sh && ./setup.sh
+# cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup-docker.sh && ./setup-docker.sh
 
 
 echo "Hello, Simulated Debian Installer"
