@@ -49,7 +49,7 @@ sudo cp -R /root/prime/.aws /home/james/
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb . 
 sudo dpkg -i --force-overwrite ./nvim-linux64.deb
 
-gh repo clone jamesstorm/nvim /home/james/.config
+gh repo clone jamesstorm/nvim /home/james/.config/nvim
 
 
 #get my nvim config
