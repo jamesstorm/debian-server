@@ -43,15 +43,6 @@ chmod +x /home/$USERNAME/prime/debian/setup.sh
 
 chown -R $USERNAME /home/$USERNAME/prime 
 
-#ZSH
-echo "ZSH"
-sudo apt install zsh -y
-chsh -s $(which zsh)
-
-#oh-my-zsh
-echo "on-my-zsh"
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 cd /home/$USERNAME
 
 echo "Now login as $USERNAME and run /home/$USERNAME/prime/debian/setup.sh"
