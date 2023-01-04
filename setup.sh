@@ -23,8 +23,8 @@ apt-get upgrade -y
 
 #create a user then collect a passwd
 
-useradd -p $(openssl passwd -crypt $PASSWD) james
-usermod -aG sudo james
+useradd -p $(openssl passwd -crypt $PASSWD) $USERNAME
+usermod -aG sudo $USERNAME
 
 #Github CLI
 echo "Github CLI"
@@ -37,11 +37,13 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 gh auth login --with-token < tokenfile.tmp
 rm tokenfile.tmp
 
-gh repo clone jamesstorm/prime /home/james/prime
+gh repo clone jamesstorm/prime /home/$USERNAME/prime
 
-chmod +x /home/james/prime/debian/setup.sh
+chmod +x /home/$USERNAME/prime/debian/setup.sh
 
-echo "Now login as $USER and run /home/james/prime/debian/setup.sh"
+chown -r /home/$USERNAME/prime $USERNAME
+
+echo "Now login as $USERNAME and run /home/$USERNAME/prime/debian/setup.sh"
 
 
 
