@@ -24,6 +24,9 @@ usermod -aG sudo $USERNAME
 
 echo "Now do: su -l james and run the other script"
 
+rm -rf ~/debian-server
+
+
 
 
 
