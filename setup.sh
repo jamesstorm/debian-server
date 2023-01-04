@@ -5,7 +5,7 @@ echo "Hello, Debain Server"
 # need to run this first manually
 # cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup.sh && ./setup.sh
 
-read TOKEN
+read -p "paste github token: " TOKEN
 
 
 # apt update upgrade
