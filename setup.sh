@@ -18,9 +18,9 @@ echo "HERE WE GO!"
 cd ~
 
 # apt update upgrade
-apt-get update 
-apt install apt-transport-https ca-certificates software-properties-common curl wget -y
-apt-get upgrade -y
+sudo apt-get update 
+sudo apt install apt-transport-https ca-certificates software-properties-common curl wget -y
+sudo apt-get upgrade -y
 
 #Github CLI
 echo "Github CLI"
