@@ -27,7 +27,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 && apt update \
 && apt install gh -y
 
-gh auth login --with-token > tokenfile.tmp
+gh auth login --with-token < tokenfile.tmp
 rm tokenfile.tmp
 
 gh repo clone jamesstorm/prime /home/james/prime
