@@ -1,9 +1,11 @@
 #!/bin/sh
 
-echo "Hello, Debain Server"
 
 # need to run this first manually
 # cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup.sh && ./setup.sh
+
+
+echo "Hello, Debain Server"
 
 read -p "paste github token: " TOKEN
 echo $TOKEN > "tokenfile.tmp"
