@@ -23,7 +23,7 @@ apt-get upgrade -y
 
 #create a user then collect a passwd
 
-useradd -p $(openssl passwd -crypt $PASSWD) $USERNAME
+useradd -m -p $(openssl passwd -crypt $PASSWD) $USERNAME
 usermod -aG sudo $USERNAME
 
 #Github CLI
