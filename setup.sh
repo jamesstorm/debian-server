@@ -7,8 +7,14 @@
 
 echo "Hello, Debain Server"
 
-read -p "paste github token: " TOKEN
+read -p "Paste github token: " TOKEN
 echo $TOKEN > "tokenfile.tmp"
+
+read -p "Enter username: : " USERNAME
+
+read -p "Enter a password for $USERNAME: " PASSWD
+
+
 
 # apt update upgrade
 apt-get update 
@@ -16,10 +22,9 @@ apt install apt-transport-https ca-certificates software-properties-common sudo 
 apt-get upgrade -y
 
 #create a user then collect a passwd
-adduser --disabled-password --gecos "" james
-echo "james ALL=PASSWD: ALL" > /etc/ers.d/james
-passwd
 
+useradd -p $(openssl passwd -crypt $PASSWD) james
+usermod -aG sudo james
 
 #Github CLI
 echo "Github CLI"
@@ -36,10 +41,7 @@ gh repo clone jamesstorm/prime /home/james/prime
 
 chmod +x /home/james/prime/debian/setup.sh
 
-#OpenSSH Server
-sudo apt install openssh-server -y
-
-echo "Now login as james and run /home/james/prime/debian/setup.sh"
+echo "Now login as $USER and run /home/james/prime/debian/setup.sh"
 
 
 
