@@ -17,6 +17,8 @@ read -p "Enter a password for $USERNAME: " PASSWD
 
 #create a user then collect a passwd
 
+apt-get install sudo
+
 useradd -m -p $(openssl passwd -crypt $PASSWD) $USERNAME
 usermod -aG sudo $USERNAME
 
