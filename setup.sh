@@ -27,6 +27,7 @@ sudo apt install \
     wget \
     screenfetch \
     python3-pip \
+    python3-venv \
     gnupg \
     lsb-release \
     -y
@@ -61,8 +62,6 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 
 gh repo clone jamesstorm/nvim /home/james/.config/nvim
-
-pip install -U jedi-language-server
 
 #docker
 
