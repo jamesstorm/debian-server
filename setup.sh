@@ -45,15 +45,17 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 read -p "Paste github token: " TOKEN
 echo $TOKEN > "tokenfile.tmp"
 
-gh auth login --with-token < tokenfile.tmp
-rm tokenfile.tmp
+gh auth login
 
-sudo cp -R /root/prime/.aws /root/
-sudo cp -R /root/prime/.aws /home/james/
+gh repo clone jamesstorm/prime /home/james/prime
 
-#neovim
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb . 
+# need to to do this for when we need to sudo calls to AWS CLI (not that we do that much any more)
+sudo cp -R /hame/james/.aws /root/
+
+#neovim - Nightly
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb .
 sudo dpkg -i --force-overwrite ./nvim-linux64.deb
+rm nvim-linux64.deb
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
