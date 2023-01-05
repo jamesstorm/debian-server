@@ -32,6 +32,7 @@ sudo apt install \
     lsb-release \
     mdadm \
     openssh-server \
+    tmux \
     -y
 sudo apt-get upgrade -y
 
