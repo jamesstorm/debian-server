@@ -17,9 +17,19 @@ echo "HERE WE GO!"
 
 cd ~
 
-# apt update upgrade
+# apt update, install things, then upgrade
 sudo apt-get update 
-sudo apt install apt-transport-https ca-certificates software-properties-common curl wget -y
+sudo apt install \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    curl \
+    wget \
+    screenfetch \
+    python3-pip \
+    gnupg \
+    lsb-release \
+    -y
 sudo apt-get upgrade -y
 
 #Github CLI
@@ -37,11 +47,6 @@ echo $TOKEN > "tokenfile.tmp"
 gh auth login --with-token < tokenfile.tmp
 rm tokenfile.tmp
 
-sudo apt install wget \
-screenfetch \
-python3-pip \
--y
-
 sudo cp -R /root/prime/.aws /root/
 sudo cp -R /root/prime/.aws /home/james/
 
@@ -49,20 +54,15 @@ sudo cp -R /root/prime/.aws /home/james/
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb . 
 sudo dpkg -i --force-overwrite ./nvim-linux64.deb
 
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 gh repo clone jamesstorm/nvim /home/james/.config/nvim
 
 
-#get my nvim config
-cd ~/.config
-gh repo clone jamesstorm/nvim
-
-
 #docker
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+
+
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
@@ -79,5 +79,11 @@ chsh -s $(which zsh)
 #oh-my-zsh
 echo "on-my-zsh"
 sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#Powerlevel10k ZSH Theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+
 
 screenfetch
