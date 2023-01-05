@@ -33,7 +33,7 @@ usermod -aG sudo $USERNAME
 
 rm -rf ~/debian-server
 
-echo "Now run: ${Yellow}su -l $USERNAME${No_Color} and do the other things."
+echo "Now run: ${Yellow}su -l $USERNAME${Color_Off} and do the other things."
 
 
 
