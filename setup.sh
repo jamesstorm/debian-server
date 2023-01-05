@@ -59,6 +59,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 gh repo clone jamesstorm/nvim /home/james/.config/nvim
 
+pip install -U jedi-language-server
 
 #docker
 
