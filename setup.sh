@@ -63,8 +63,6 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
 gh repo clone jamesstorm/nvim /home/james/.config/nvim
 
 #docker
-
-
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
@@ -80,12 +78,14 @@ chsh -s $(which zsh)
 
 #oh-my-zsh
 echo "on-my-zsh"
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #Powerlevel10k ZSH Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 
+# do a screenfetch at all zsh session starts for james
+echo "screenfetch" > /home/james/.zshenv
 
 screenfetch
