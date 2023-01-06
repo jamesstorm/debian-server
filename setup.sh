@@ -46,10 +46,10 @@ sudo apt install gh -y
 
 gh auth login
 
-gh repo clone jamesstorm/prime /home/james/prime
+gh repo clone jamesstorm/prime /home/$USERNAME/prime
 
 # need to to do this for when we need to sudo calls to AWS CLI (not that we do that much any more)
-sudo cp -R /hame/james/.aws /root/
+sudo cp -R /home/$USERNAME/.aws /root/
 
 # Neovim - Nightly, baby!
 #
@@ -70,7 +70,7 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
 rm ripgrep_13.0.0_amd64.deb
 
 # Grab my Neovim config and slam it in there.
-gh repo clone jamesstorm/nvim /home/james/.config/nvim
+gh repo clone jamesstorm/nvim /home/$USERNAME/.config/nvim
 
 # Docker
 sudo mkdir -p /etc/apt/keyrings
@@ -104,6 +104,6 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 
 # do a screenfetch at all zsh session starts for james
-echo "screenfetch" > /home/james/.zshenv
+echo "screenfetch" > /home/$USERNAME/.zshenv
 
 screenfetch
