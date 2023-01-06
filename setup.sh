@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # at a terminal
-# cd ~ && sudo apt-get update && sudo apt-get install git -y && sudo apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd /home/james/debian-server && chmod +x setup.sh && ./setup.sh
+# cd ~ && sudo apt-get update && sudo apt-get install git -y && sudo apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd /home/tom/debian-server && chmod +x setup.sh && ./setup.sh
 
-USERNAME="james"
+USERNAME="tom"
 
 # This script should be running as james
 
