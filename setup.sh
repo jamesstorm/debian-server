@@ -34,6 +34,8 @@ sudo apt install \
     openssh-server \
     tmux \
     npm \
+    htop \
+    file \
     -y
 sudo apt-get upgrade -y
 
@@ -74,6 +76,11 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+
+#Dry
+curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh
+sudo chmod 755 /usr/local/bin/dryup
+
 
 #ZSH
 echo "ZSH"
