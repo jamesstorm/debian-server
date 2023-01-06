@@ -33,6 +33,7 @@ sudo apt install \
     mdadm \
     openssh-server \
     tmux \
+    npm \
     -y
 sudo apt-get upgrade -y
 
