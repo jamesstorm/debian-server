@@ -129,6 +129,4 @@ sudo apt install brave-browser -y
 
 
 
-# do a screenfetch at all zsh session starts for james
-echo "screenfetch" > /home/$USERNAME/.zshenv
 screenfetch
