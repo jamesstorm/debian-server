@@ -15,6 +15,10 @@ fi
 
 cd ~
 
+
+
+
+
 # apt update, install things, then upgrade
 sudo apt-get update 
 sudo apt install \
@@ -37,19 +41,23 @@ sudo apt install \
     -y
 sudo apt-get upgrade -y
 
+
+
+
 #Github CLI
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
 sudo apt install gh -y
-
 gh auth login
-
 gh repo clone jamesstorm/prime /home/$USERNAME/prime
 
 # need to to do this for when we need to sudo calls to AWS CLI (not that we do that much any more)
-sudo cp -R /home/$USERNAME/.aws /root/
+#sudo cp -R /home/$USERNAME/.aws /root/
+
+
+
 
 # Neovim - Nightly, baby!
 #
@@ -72,6 +80,10 @@ rm ripgrep_13.0.0_amd64.deb
 # Grab my Neovim config and slam it in there.
 gh repo clone jamesstorm/nvim /home/$USERNAME/.config/nvim
 
+
+
+
+
 # Docker
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -81,6 +93,9 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+
+
+
 # Dry 
 # A terminal app for reviewing state of running containers
 # 
@@ -88,22 +103,32 @@ curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh
 sudo chmod 755 /usr/local/bin/dryup
 
 
+
+
 # ZSH
 # 
 echo "ZSH"
 sudo apt install zsh -y
 chsh -s $(which zsh)
-
 # ZSH - oh-my-zsh
 echo "on-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Powerlevel10k ZSH Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 
+
+
+# Brave Browser
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
+
+
+
 # do a screenfetch at all zsh session starts for james
 echo "screenfetch" > /home/$USERNAME/.zshenv
-
 screenfetch
