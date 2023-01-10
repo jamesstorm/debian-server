@@ -116,8 +116,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # Powerlevel10k ZSH Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-
-
+#zsh-autosuggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 
 # Brave Browser
@@ -128,5 +128,7 @@ sudo apt install brave-browser -y
 
 
 
+mkdir ~/.local/bin
+export PATH="$HOME/.local/bin:$PATH"
 
 screenfetch
