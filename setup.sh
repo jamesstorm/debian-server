@@ -128,7 +128,6 @@ sudo apt install brave-browser -y
 
 
 
-mkdir ~/.local/bin
-export PATH="$HOME/.local/bin:$PATH"
+mkdir ~/bin
 
 screenfetch
