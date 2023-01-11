@@ -100,7 +100,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 # A terminal app for reviewing state of running containers
 # 
 curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh
-sudo chmod 755 /usr/local/bin/dryup
+sudo chmod 755 /usr/local/bin/dry
 
 
 
