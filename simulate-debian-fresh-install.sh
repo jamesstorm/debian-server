@@ -5,7 +5,7 @@
 # See setup.sh for the script that should be runon bare iron 
 
 # need to run this first manually
-# cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x setup-docker.sh && ./setup-docker.sh
+# cd ~ && apt-get update && apt-get install git -y && apt-get upgrade -y && git clone https://github.com/jamesstorm/debian-server && cd ~/debian-server && chmod +x simulate-debian-fresh-install.sh && ./simulate-debian-fresh-install.sh
 
 # Reset
 Color_Off='\033[0m'       # Text Reset
