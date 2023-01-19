@@ -115,7 +115,8 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 # ZSH - oh-my-zsh
 echo "on-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 # Powerlevel10k ZSH Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
@@ -131,7 +132,7 @@ sudo apt install brave-browser -y
 
 
 
-mkdir ~/bin
+mkdir -p ~/bin
 
 
 
