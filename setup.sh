@@ -139,4 +139,4 @@ mkdir ~/bin
 # DDNS with Route53
 sudo cp /home/$USERNAME/prime/ddns/ddns.service /etc/systemd/system/
 sudo systemctl enable ddns.service
-sudo systenctl start ddns.service
+sudo systemctl start ddns.service
