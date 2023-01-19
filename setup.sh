@@ -40,6 +40,7 @@ sudo apt install \
     file \
     awscli \
     jq \
+    cockpit \
     -y
 sudo apt-get upgrade -y
 
