@@ -55,7 +55,7 @@ sudo apt update
 sudo apt install gh -y
 gh auth login
 gh repo clone jamesstorm/prime /home/$USERNAME/prime
-cp -R cp /home/$USERNAME/prime/.aws /home/$USERNAME
+cp -R /home/$USERNAME/prime/.aws /home/$USERNAME
 # need to to do this for when we need to sudo calls to AWS CLI (not that we do that much any more)
 sudo cp -R /home/$USERNAME/.aws /root/
 
