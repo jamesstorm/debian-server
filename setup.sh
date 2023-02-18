@@ -55,7 +55,7 @@ sudo apt update
 sudo apt install gh -y
 gh auth login
 gh repo clone jamesstorm/prime /home/$USERNAME/prime
-cp -R cp /home/$USERNAME/prime/.aws /home/$USERNAME
+cp -R /home/$USERNAME/prime/.aws /home/$USERNAME
 # need to to do this for when we need to sudo calls to AWS CLI (not that we do that much any more)
 sudo cp -R /home/$USERNAME/.aws /root/
 
@@ -115,7 +115,8 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 # ZSH - oh-my-zsh
 echo "on-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 # Powerlevel10k ZSH Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
@@ -135,7 +136,7 @@ sudo apt install brave-browser -y
 
 
 
-mkdir ~/bin
+mkdir -p ~/bin
 
 
 
@@ -143,4 +144,4 @@ mkdir ~/bin
 # DDNS with Route53
 sudo cp /home/$USERNAME/prime/ddns/ddns.service /etc/systemd/system/
 sudo systemctl enable ddns.service
-sudo systenctl start ddns.service
+sudo systemctl start ddns.service
