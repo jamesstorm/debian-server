@@ -123,10 +123,12 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 #zsh-autosuggestions plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-# switcheroo for the .zshrc 
+# switcheroo for the .zshrc and .tmux.conf files
 rm ~/.zshrc
 ln prime/.zshrc .zshrc
 
+rm ~/.tmux.conf
+ln ~/prime/.tmux.conf .tmux.conf
 
 # Brave Browser
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -145,3 +147,9 @@ mkdir -p ~/bin
 sudo cp /home/$USERNAME/prime/ddns/ddns.service /etc/systemd/system/
 sudo systemctl enable ddns.service
 sudo systemctl start ddns.service
+
+
+# bump-up inotify so we avoid transcoding errors with plex
+#   See here: https://www.reddit.com/r/PleX/comments/lzwkyc/comment/gq4xcat/?utm_source=share&utm_medium=web2x&context=3
+echo "fs.inotify.max_user_watches=16384" >> /etc/sysctl.conf
+
